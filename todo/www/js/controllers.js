@@ -27,27 +27,12 @@ angular.module('starter.controllers', [])
   };
 })
 
-/*.controller('TodoCtrl', function($scope, $http) {
-   $scope.devList =
-   {filter : '',
-   todoList : [
-    { text: "Todo 1", checked: true },
-    { text: "Todo 2", checked: false },
-    { text: "Todo 3", checked: false }
-  ]};
-
-  $scope.addTodo = function( todos ) {
-    $scope.devList.todoList.push({text:todos.todotext, checked:false});
-    todos.todotext = '';
-  };
-}); */
-
 .controller('TodoCtrl', function($scope) {
   console.log("hhdheshfudhfdhgudhnfvj");
   $scope.tasks = [
-    { title: 'Collect coins' },
-    { title: 'Eat mushrooms' },
-    { title: 'Get high enough to grab the flag' },
-    { title: 'Find the Princess' }
+    { title: 'Todo item 1' },
+    { title: 'Todo item 2' },
+    { title: 'Todo item 3' },
+    { title: 'Todo item 4' }
   ];
 });
