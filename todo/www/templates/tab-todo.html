@@ -1,17 +1,51 @@
-hello
 <ion-view view-title="Todo">
-  <ion-content>
-    <ion-list>
-    <!-- Center content -->
-	  <ion-header-bar class="bar-dark">
-	    <h1 class="title">Todo</h1>
-	  </ion-header-bar>
-    <!-- our list and list items -->
-      <ion-item ng-repeat="task in tasks">
-        {{task.title}}
-      </ion-item>
+    <ion-content>
+    <ion-header-bar class="bar-positive">
+      <div class="buttons">
+        <button class="button button-icon icon ion-ios-minus-outline"
+          ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+      </div>
+      <div class="title">
+        <label class="item item-input">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="text" placeholder="Search" ng-model="search">
+        </label>
+      </div>
+      <div class="buttons">
+        <button class="button" ng-click="data.showDelete = false; data.showReorder = !data.showReorder">
+            Reorder
+        </button>
+      </div>
+    </ion-header-bar>
+    <br><br>
+    <!-- <ion-list show-delete="data.showDelete"
+              show-reorder="data.showReorder">
+      <ion-item ng-repeat="item in items.todoList | filter : search |filter : items.filter"
+                item="item"
+                class="item-remove-animate">
+       {{ item.text }}
+        <ion-delete-button class="ion-minus-circled"
+                           ng-click="onItemDelete(item)"></ion-delete-button>
+        <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+      </ion-item> -->
+      <ion-checkbox ng-repeat="item in devList.todoList | filter : search |filter : devList.filter"
+                    ng-model="item.checked"
+                    ng-checked="item.checked">
+        {{ item.text }}
+      </ion-checkbox>
     </ion-list>
-  </ion-content>
+    <br>
+    <button class="button button-energized" ng-click="devList.filter=''">Show All</button>
+    <button class="button button-balanced" ng-click="devList.filter='true'">Complete</button>
+    <button class="button button-assertive" ng-click="devList.filter='false'">Incomplete</button>
+    <br>
+    <label class="item item-input">
+          <input type="text" placeholder="Add new todo task">
+        </label>
+        <button class="button button-block button-positive">
+          Add
+        </button>
+ </ion-content>
 </ion-view>
 
 

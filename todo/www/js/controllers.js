@@ -27,12 +27,44 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('TodoCtrl', function($scope) {
-  console.log("hhdheshfudhfdhgudhnfvj");
-  $scope.tasks = [
-    { title: 'Todo item 1' },
-    { title: 'Todo item 2' },
-    { title: 'Todo item 3' },
-    { title: 'Todo item 4' }
-  ];
-});
+.controller('TodoCtrl', function($scope, $http) {
+   $scope.devList =
+   {filter : '',
+   todoList : [
+    { text: "Todo 1", checked: true },
+    { text: "Todo 2", checked: false },
+    { text: "Todo 3", checked: false }
+  ]};
+
+  $scope.addTodo = function( todos ) {
+    $scope.devList.todoList.push({text:todos.todotext, checked:false});
+    todos.todotext = '';
+  };
+})
+
+/*.controller('TodoCtrl', function($scope) {
+
+  $scope.data = {
+    showDelete: false
+  };
+
+  $scope.moveItem = function(item, fromIndex, toIndex) {
+    $scope.items.todoList.splice(fromIndex, 1);
+    $scope.items.todoList.splice(toIndex, 0, item);
+  };
+
+  $scope.onItemDelete = function(item) {
+    $scope.items.splice($scope.items.indexOf(item), 1);
+  };
+
+
+  $scope.items =
+   {filter : '',
+   todoList : [
+    { text: "Todo 1", checked: true },
+    { text: "Todo 2", checked: false },
+    { text: "Todo 3", checked: false }
+  ]};
+}) */
+
+;
