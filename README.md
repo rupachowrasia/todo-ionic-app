@@ -1,2 +1,2 @@
 # IonicApp
-#### Todo app to learn Ionic
+Todo app to learn Ionic
